@@ -1,0 +1,14 @@
+body:
+  name: "ss-mismatch-service"
+  serviceType: "web-app"
+
+  imageDetails:
+    imageId: 200808
+    versionId: 218644
+
+  resources:
+    instanceTypeId: 48
+
+  scaleToZero: false
+
+  healthCheckURL: "/"

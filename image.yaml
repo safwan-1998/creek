@@ -1,0 +1,15 @@
+type: image
+
+artifact:
+  path: "."
+
+body:
+  name: "ss-mismatch-image"
+  version: "1.0.0"
+  type: "webapp"
+
+  buildDetails:
+    source: upload
+    useCache: false
+    context: .
+    dockerfilePath: Dockerfile
