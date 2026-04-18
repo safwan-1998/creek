@@ -1,16 +1,10 @@
-from fastapi import FastAPI
-from fastapi.responses import RedirectResponse
-import subprocess
+# app.py
+import streamlit as st
 
-app = FastAPI()
+st.title("🚀 Hello World")
+st.write("If you can see this, deployment works!")
 
-@app.get("/")
-def root():
-    return {"status": "ok"}
-
-# Start Streamlit in background
-subprocess.Popen([
-    "streamlit", "run", "dashboard.py",
-    "--server.port=8501",
-    "--server.address=0.0.0.0"
-])
+name = st.text_input("Enter your name")
+if name:
+    st.success(f"Hello {name} 👋")
+    st.write("App is alive")

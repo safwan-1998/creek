@@ -1,14 +1,19 @@
+# Peak web-app service. Replace imageId and versionId with values from the built creek-webapp-image.
 body:
-  name: "ss-mismatch-service"
+  name: "creeks-webapp"
+  title: "Creek"
+  description: "FastAPI health on 8080; Streamlit dashboard on 8501 (expose port in platform if needed)."
   serviceType: "web-app"
 
   imageDetails:
-    imageId: 200808
-    versionId: 218644
+    imageId: 200852
+    versionId: 218688
 
   resources:
     instanceTypeId: 48
 
   scaleToZero: false
+  sessionStickiness: false
 
+  # Must match the port Gunicorn binds in Dockerfile (8080).
   healthCheckURL: "/"

@@ -1,15 +1,20 @@
+# Peak image upload spec (type: webapp).
+# After build completes, copy imageId + versionId from the response/UI into service.yaml.
 type: image
 
 artifact:
   path: "."
+  ignore_files:
+    - ".dockerignore"
 
 body:
-  name: "ss-mismatch-image"
+  name: "creeks-webapp-image"
   version: "1.0.0"
+  description: "Creek FastAPI + Streamlit webapp image"
   type: "webapp"
 
   buildDetails:
     source: upload
     useCache: false
-    context: .
+    context: "."
     dockerfilePath: Dockerfile
